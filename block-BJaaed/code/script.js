@@ -114,22 +114,19 @@ let books = [
   },
 ];
 
-let div = document.querySelector(".flex");
+let div = document.querySelector(".ul");
 
-books.forEach(book => {
-  let article = document.createElement("article");
-  article.classList.add("card");
-  let heading = document.createElement("h2");
-  heading.innerText = book.title;
+books.forEach((cart) => {
+  let li = document.createElement("li");
   let img = document.createElement("img");
-  img.src = book.image;
-  img.classList.add("full-width");
-  let para = document.createElement("p");
-  para.innerText = `Author:${book.author}`;
+  img.src = cart.image;
+  let h2 = document.createElement("h2");
+  h2.innerText = cart.title;
+  let p = document.createElement("p");
+  p.innerText = cart.author;
   let button = document.createElement("button");
   button.innerText = "Buy Now";
-  article.append(img, heading, para, button);
-  div.append(article);
+
+  li.append(img, h2, p, button);
+  div.append(li);
 });
-
-
